@@ -4,10 +4,18 @@ export class Task {
     public dueDate: string;
     public checked: boolean;
 
-    constructor(id: number, name: string, dueDate: string, checked: boolean){
-        this.id = id;
+    // constructor(id: number, name: string, dueDate: string, checked: boolean){
+    //     this.id = id;
+    //     this.name = name;
+    //     this.dueDate = dueDate;
+    //     this.checked = checked;
+    // }
+
+    constructor(name: string, dueDate: string, checked: boolean){
         this.name = name;
         this.dueDate = dueDate;
         this.checked = checked;
     }
+
+    
 }

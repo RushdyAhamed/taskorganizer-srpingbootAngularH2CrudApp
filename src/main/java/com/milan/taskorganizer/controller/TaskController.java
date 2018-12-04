@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/tasks")
 @CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
+
 public class TaskController {
 
     @Autowired
@@ -18,10 +19,16 @@ public class TaskController {
         return ts.listTasks();
     }
 
-    @PostMapping("/save")
-    public Task saveTask(Task task){
+    @PostMapping(value = "/save")
+    public Task saveTask(@RequestBody Task task){
         Task savedTask =  ts.saveTask(task);
         return savedTask;
+    }
+
+    @PutMapping(value = "/update")
+    public Task updateTask(@RequestBody Task task){
+        Task updatedTask =  ts.saveTask(task);
+        return updatedTask;
     }
 
 
